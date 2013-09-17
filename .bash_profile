@@ -1,4 +1,3 @@
-
 . ~/.git-completion.bash      # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 . ~/z.sh                      # https://github.com/rupa/z
 
@@ -8,14 +7,30 @@ PS1="\w $ "
 # Make ls use colors
 export CLICOLOR=1
 
+alias m='mate'
 alias cw='compass watch'
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias week='date +%V'
 
+# Remove missing files from svn repository
+alias rmmissing='svn rm $( svn status | sed -e "/^!/!d" -e "s/^!//" )'
 
+# Edit .bash_profile in TextMate
+alias ep='mate ~/.bash_profile' 
+
+# Make ls use colors
+export CLICOLOR=1
+
+# Extend bash history
+HISTSIZE="1000"
+HISTFILESIZE="10000"
+export HISTSIZE
+export HISTFILESIZE
 
 # credit: http://nparikh.org/notes/zshrc.txt
 # Usage: extract <file>
